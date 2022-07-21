@@ -62,11 +62,13 @@ data_set = {
 
 @pytest.fixture
 def test_averageIMP():
+    logging.info('test_averageIMP')
     assert averageIMP([1, 2, 3, 4, 5]) == 3
 
 
 @pytest.fixture
 def test_medianIMP():
+    logging.info('test_medianIMP')
     assert medianIMP([1, 2, 3, 4, 5, 6, 7, 8, 9]) == 5
 
 
