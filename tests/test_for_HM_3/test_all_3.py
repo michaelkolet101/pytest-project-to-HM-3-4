@@ -1,4 +1,5 @@
 import pytest
+import logging
 from home_work_3 import *
 
 data_set = {
@@ -71,11 +72,13 @@ def test_medianIMP():
 
 def test_find_median_average(test_averageIMP, test_medianIMP):
     lst = find_median_average(data_set)
+    logging.info('test_find_median_average')
     assert (lst[0] == 36.22222222222222 and lst[1] == 30)
 
 
 def test_ChaeckValIMP(capsys):
     ChaeckValIMP(data_set)
+    logging.info('test_ChaeckValIMP')
     ans = capsys.readouterr()
     assert ans.err == ""
 
@@ -83,6 +86,7 @@ def test_ChaeckValIMP(capsys):
 def test_split_male_female():
 
     lst_of_dict = split_male_female(data_set)
+    logging.info('test_split_male_female')
     assert 'female' not in lst_of_dict[0]
     assert 'male' not in lst_of_dict[1]
 
@@ -90,4 +94,5 @@ def test_split_male_female():
 def test_print_values_above(capsys):
     print_values_above(data_set, 30)
     ans = capsys.readouterr()
+    logging.info('test_print_values_above')
     assert '22' not in ans.out
